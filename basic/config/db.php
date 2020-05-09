@@ -11,6 +11,6 @@ return [
     //'enableSchemaCache' => true,
     //'schemaCacheDuration' => 60,
     //'schemaCache' => 'cache',
-    // ESTO ES NUEVO
+    // ESTO ES NUEVO OK ESTA BIEN ESTO ES NUEVO CONFIRMADO
 ];
 
