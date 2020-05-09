@@ -3,7 +3,6 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=empleostics',
-    //Nueva modificacion
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
@@ -12,4 +11,6 @@ return [
     //'enableSchemaCache' => true,
     //'schemaCacheDuration' => 60,
     //'schemaCache' => 'cache',
+    // ESTO ES NUEVO
 ];
+
