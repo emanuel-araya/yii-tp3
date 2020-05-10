@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Rubros;
 use app\models\RubrosSearch;
+use Codeception\Command\Run;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -123,5 +124,17 @@ class RubrosController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    public function actionListar()
+    {
+        $listaRubros=Rubros::find()->orderBy('descripcion')->all();
+        return $this->render('rubros',['model'=>$listaRubros]);
+    }
+    public function actionBusqueda($idRubro)
+    {
+        $rubro=$this->findModel($idRubro);
+        return $this->render('busquedasRubro', [
+            'data' => $rubro,
+        ]);
     }
 }
