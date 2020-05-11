@@ -5,7 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Rubros;
 use app\models\RubrosSearch;
-use Codeception\Command\Run;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -33,6 +33,7 @@ class RubrosController extends Controller
     /**
      * Lists all Rubros models.
      * @return mixed
+     * ActionIndex es una función que lo que hace es renderizar la pagina por defecto del controlador
      */
     public function actionIndex()
     {
@@ -47,6 +48,7 @@ class RubrosController extends Controller
 
     /**
      * Displays a single Rubros model.
+     * actionView lo que hace es mostrarte una página referida a un modelo con clave "id"
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,6 +63,9 @@ class RubrosController extends Controller
     /**
      * Creates a new Rubros model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * actionCreate lo que hace es cargar un modelo nuevo, lo novedoso de esta
+     * función es que obtiene los datos por post que vienen de un formulario que se encuentra update/create
+     * luego los carga y redirecciona al view del modelo cargado
      * @return mixed
      */
     public function actionCreate()
@@ -79,6 +84,9 @@ class RubrosController extends Controller
     /**
      * Updates an existing Rubros model.
      * If update is successful, the browser will be redirected to the 'view' page.
+     * actionUpdate sirve para actualizar el modelo con id $id, primero la busca con findModel
+     * para luego llamar a la vista update, en el caso de no encontrar la devolucion por post, te redirije a
+     * la pagina vista de update.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -99,6 +107,7 @@ class RubrosController extends Controller
     /**
      * Deletes an existing Rubros model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+     *  actionDelete elimina el objeto con id $id, y nos redirije a la página index
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -116,6 +125,7 @@ class RubrosController extends Controller
      * @param integer $id
      * @return Rubros the loaded model
      * @throws NotFoundHttpException if the model cannot be found
+     * findModel es una función que me permite buscar un objeto por el $id.
      */
     protected function findModel($id)
     {

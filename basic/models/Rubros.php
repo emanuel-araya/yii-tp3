@@ -19,11 +19,12 @@ class Rubros extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'rubros';
+        return 'rubros';/**Obtiene el nombre de la tabla*/
     }
 
     /**
      * {@inheritdoc}
+     * A partir de la tabla genera las reglas de cada atributo
      */
     public function rules()
     {
@@ -34,6 +35,9 @@ class Rubros extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
+     * attributeLabels es una función que nos sirve en view
+     * porque le asigna a cada atributo un string correspondiente al Label
+     * que va a aparecer por ejemplo en un form
      */
     public function attributeLabels()
     {
@@ -47,6 +51,8 @@ class Rubros extends \yii\db\ActiveRecord
      * Gets query for [[Busquedas]].
      *
      * @return \yii\db\ActiveQuery
+     * obtiene varias instancias de "Busquedas" que hacen referencia
+     * al Rubro que lo invoca
      */
     public function getBusquedas()
     {
