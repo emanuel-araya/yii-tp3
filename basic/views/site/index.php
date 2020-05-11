@@ -4,50 +4,47 @@
 
 $this->title = 'My Yii Application';
 ?>
+
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Programaci&oacute;n web Avanzada</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">Tp3 - YII</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
 
     <div class="body-content">
-
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+			<div class="col-12">
+                <h3>Empleos TICS</h3>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                        <p>La agencia Empleos TICS desea poder realizar las inscripciones a las búsquedas laborales online.
+                            Con este objetivo debemos:</p>
+                        <br>
+            </div>              
+        </div>
+        <div class="row">
+			<div class="col-md-6">
+        
+                        <ul class="list-group">
+                            <li class="list-group-item">Listar rubros con un link que nos permitan ver las búsquedas de cada rubro.</li>
+                            <li class="list-group-item">Mostrar búsquedas laborales por rubro</li>
+                            <li class="list-group-item"> Permitir la inscripción de un postulante a una búsqueda laboral.</li>
+                            <li class="list-group-item"> Mostrar las inscripciones de una búsqueda laboral.</li>
+                        </ul>           
             </div>
         </div>
 
+ 
+        <br>
+        <hr>              
+        <div class="row">
+            <div class="col-12" >
+            <h4><em>Mauro Saracini</em></h4>
+            <h4><em>Emanuel Araya</em></h4>    
+            </div>
+        </div>
     </div>
+</div>
 </div>
