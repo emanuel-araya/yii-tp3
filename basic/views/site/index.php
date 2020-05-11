@@ -35,8 +35,6 @@ $this->title = 'My Yii Application';
                         </ul>           
             </div>
         </div>
-
- 
         <br>
         <hr>              
         <div class="row">
