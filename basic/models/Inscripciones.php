@@ -31,7 +31,7 @@ class Inscripciones extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idBusqueda'], 'required'],
+            [['idBusqueda','fecha','apellido','nombre'], 'required'],
             [['idBusqueda'], 'integer'],
             [['fecha'], 'safe'],
             [['apellido', 'nombre'], 'string', 'max' => 150],
