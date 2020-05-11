@@ -8,7 +8,9 @@ use yii\widgets\DetailView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Busquedas del Rubro';
+$this->params['breadcrumbs'][] = ['label' => 'ListaRubros', 'url' => ['listar']];
 $this->params['breadcrumbs'][] = $this->title;
+\yii\web\YiiAsset::register($this);
 ?>
 <div class="busquedas-index">
 
@@ -21,10 +23,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'descripcion',
         ],
     ]) ?>
-
-    <?php $busq=$data->busquedas ;
-        foreach($busq as $objbusq){
-            echo "Empresa:".$objbusq['empresa']." ,Titulo:".$objbusq['titulo']." ,Descripcion: ".$objbusq['descripcion'];
-        }
-    ?>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Empresa</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descripcion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $busq = $data->busquedas;
+            foreach ($busq as $objbusq) { ?>
+                <tr>
+                    <td><?= $objbusq['empresa'] ?></td>
+                    <td><?= $objbusq['titulo'] ?></td>
+                    <td><?= $objbusq['descripcion'] ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </div>
