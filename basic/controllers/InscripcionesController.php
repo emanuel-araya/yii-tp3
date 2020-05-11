@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * InscripcionesController implements the CRUD actions for Inscripciones model.
  */
@@ -124,4 +125,20 @@ class InscripcionesController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    //Para el alta de una nueva ins
+    public function actionCrearInscripcion()
+    {
+        $model = new Inscripciones();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->idInscripcion]);
+        }
+
+        return $this->render('nuevaInscripcion', [
+            'model' => $model,
+        ]);
+    }
+
+    
 }

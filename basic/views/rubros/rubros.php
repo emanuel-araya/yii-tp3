@@ -7,7 +7,7 @@ use yii\widgets\LinkPager;
 <ul>
 <?php foreach ($model as $objRubro): ?>
     <li>
-        <?= Html::a($objRubro->descripcion, Url::to(['busqueda','idRubro'=>$objRubro->idRubro],)) ?>
+        <?= Html::a($objRubro->descripcion, Url::to(['busqueda','idRubro'=>$objRubro->idRubro])) ?>
     </li>
 <?php endforeach; ?>
 </ul>
