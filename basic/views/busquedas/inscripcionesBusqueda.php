@@ -7,14 +7,14 @@ use yii\widgets\DetailView;
 /* @var $searchModel app\models\BusquedasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Inscripciones a Busqueda: '.$empresa;
+$this->title = 'Inscripciones a Busqueda';
 $this->params['breadcrumbs'][] = ['label' => 'Listado de Busquedas', 'url' => ['listar-busquedas']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="Lista inscripciones busquedas-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title)." De: ".$empresa ?></h1>
     <table class="table">
         <thead>
             <tr>
