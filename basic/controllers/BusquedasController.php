@@ -8,6 +8,7 @@ use app\models\BusquedasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\Pagination;
 
 /**
  * BusquedasController implements the CRUD actions for Busquedas model.
@@ -123,5 +124,33 @@ class BusquedasController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionListarBusquedas()
+    {
+        $query = Busquedas::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 6,
+            'totalCount' => $query->count(),
+        ]);
+
+        $busquedas = $query->orderBy('idBusqueda DESC')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('listadoBusqueda', [
+            'busquedas' => $busquedas,
+            'pagination' => $pagination,
+        ]);
+    }
+
+    public function actionInscripcionBusqueda($idBusqueda){
+        $objBusqueda=$this->findModel($idBusqueda);
+        return $this->render('inscripcionesBusqueda', [
+            'model' => $objBusqueda->inscripciones,
+            'empresa'=> $objBusqueda->empresa,
+        ]);
     }
 }
