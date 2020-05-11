@@ -11,30 +11,36 @@ $this->title = 'Nueva Inscripcion';
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
+<div class="row">
+    <div class="col-lg-6">
 
-<div class="inscripciones-form">
+        <div class="inscripciones-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+            <h1><?= Html::encode($this->title) ?></h1>
 
-        <?php
-            
-            $item = Busquedas::find()                   
-            ->select(['Titulo'])                      
-            ->indexBy('idBusqueda')                  
-            ->column();
-        ?>
-        <?= $form->field($model, 'idBusqueda')->dropdownList(
-                $item,
-            ['prompt'=>'Elija una busqueda']);
-        ?>
+            <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'fecha')->textInput() ?>
-        <?= $form->field($model, 'apellido')->textInput(['maxlength' => true]) ?>
-        <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
+                <?php
+                    
+                    $item = Busquedas::find()                   
+                    ->select(['Titulo'])                      
+                    ->indexBy('idBusqueda')                  
+                    ->column();
+                ?>
+                <?= $form->field($model, 'idBusqueda')->dropdownList(
+                        $item,
+                    ['prompt'=>'Elija una busqueda']);
+                ?>
 
-        <div class="form-group">
-            <?= Html::submitButton('Cargar', ['class' => 'btn btn-success']) ?>
+                <?= $form->field($model, 'fecha')->textInput() ?>
+                <?= $form->field($model, 'apellido')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
+
+                <div class="form-group">
+                    <?= Html::submitButton('Cargar', ['class' => 'btn btn-success']) ?>
+                </div>
+
+            <?php ActiveForm::end(); ?>
         </div>
-
-    <?php ActiveForm::end(); ?>
+    </div>
 </div>
