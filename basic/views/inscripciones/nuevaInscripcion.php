@@ -7,8 +7,9 @@ use app\models\Busquedas;
 /* @var $model app\models\Inscripciones */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->title = 'Inscripcion';
+$this->title = 'Nueva Inscripcion';
 $this->params['breadcrumbs'][] = $this->title;
+\yii\web\YiiAsset::register($this);
 ?>
 
 <div class="inscripciones-form">
