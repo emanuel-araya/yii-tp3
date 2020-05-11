@@ -13,34 +13,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="inscripciones-form">
 
-<?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
+        <?php
+            
+            $item = Busquedas::find()                   
+            ->select(['Titulo'])                      
+            ->indexBy('idBusqueda')                  
+            ->column();
+        ?>
+        <?= $form->field($model, 'idBusqueda')->dropdownList(
+                $item,
+            ['prompt'=>'Elija una busqueda']);
+        ?>
 
-    <?php
-    
-    $item = Busquedas::find()                   
-      ->select(['Titulo'])                      
-      ->indexBy('idBusqueda')                  
-      ->column();
-     ?>
-    <?= $form->field($model, 'idBusqueda')->dropdownList(
-        $item,
-    ['prompt'=>'Elija una busqueda']
-    ); ?>
+        <?= $form->field($model, 'fecha')->textInput() ?>
+        <?= $form->field($model, 'apellido')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
+        <div class="form-group">
+            <?= Html::submitButton('Cargar', ['class' => 'btn btn-success']) ?>
+        </div>
 
-
-<?= $form->field($model, 'fecha')->textInput() ?>
-
-<?= $form->field($model, 'apellido')->textInput(['maxlength' => true]) ?>
-
-<?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
-
-<div class="form-group">
-    <?= Html::submitButton('Cargar', ['class' => 'btn btn-success']) ?>
-</div>
-
-<?php ActiveForm::end(); ?>
-
-
+    <?php ActiveForm::end(); ?>
 </div>
