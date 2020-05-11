@@ -8,7 +8,7 @@ use yii\widgets\DetailView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Inscripciones a Busqueda: '.$empresa;
-$this->params['breadcrumbs'][] = ['label' => 'Listar Busquedas', 'url' => ['listar-busquedas']];
+$this->params['breadcrumbs'][] = ['label' => 'Listado de Busquedas', 'url' => ['listar-busquedas']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

@@ -3,9 +3,12 @@
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 use yii\helpers\Url;
+$this->title = 'Listado de Busquedas';
+$this->params['breadcrumbs'][] = $this->title;
+\yii\web\YiiAsset::register($this);
 ?>
 <div class="container">
-    <h1>Listado de Busquedas</h1>
+    <h1><?= Html::encode($this->title) ?></h1>
     <table class="table">
         <thead>
             <tr>

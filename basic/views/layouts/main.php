@@ -39,10 +39,13 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']], 
+            //['label' => 'About', 'url' => ['/site/about']],
+            //['label' => 'Contact', 'url' => ['/site/contact']], 
+            ['label' => 'Listar Rubros', 'url' => ['/rubros/listar-rubros']],
             ['label' => 'Inscripcion', 'url' => ['/inscripciones/crear-inscripcion']],
-            Yii::$app->user->isGuest ? (
+            ['label' => 'Mostrar Busquedas', 'url' => ['/busquedas/listar-busquedas']],
+            
+            /*Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
                 '<li>'
@@ -53,7 +56,7 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            )*/
         ],
     ]);
     NavBar::end();

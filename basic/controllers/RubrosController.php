@@ -125,16 +125,17 @@ class RubrosController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-    public function actionListar()
+    public function actionListarRubros()
     {
         $listaRubros=Rubros::find()->orderBy('descripcion')->all();
-        return $this->render('rubros',['model'=>$listaRubros]);
+        return $this->render('listaRubros',['model'=>$listaRubros]);
     }
     public function actionBusqueda($idRubro)
     {
         $rubro=$this->findModel($idRubro);
         return $this->render('busquedasRubro', [
-            'data' => $rubro,
+            'busquedas' => $rubro->busquedas,
+            'rubro'=>$rubro->descripcion
         ]);
     }
 }
