@@ -7,7 +7,7 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="rubros-rubros">
-    <h1>Rubros</h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <ul class="nav flex-colums">
         <?php foreach ($model as $objRubro) : ?>

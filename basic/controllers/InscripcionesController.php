@@ -132,11 +132,16 @@ class InscripcionesController extends Controller
         $model = new Inscripciones();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idInscripcion]);
+            return $this->redirect(['mostrar-inscripcion', 'idInscripcion' => $model->idInscripcion]);
         }
 
         return $this->render('nuevaInscripcion', [
             'model' => $model,
+        ]);
+    }
+    public function actionMostrarInscripcion($idInscripcion){
+        return $this->render('inscripcionCargada', [
+            'model' => $this->findModel($idInscripcion),
         ]);
     }
 

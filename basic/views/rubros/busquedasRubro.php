@@ -7,22 +7,14 @@ use yii\widgets\DetailView;
 /* @var $searchModel app\models\BusquedasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Busquedas del Rubro';
-$this->params['breadcrumbs'][] = ['label' => 'ListaRubros', 'url' => ['listar']];
+$this->title = 'Busquedas del Rubro: '.$rubro;
+$this->params['breadcrumbs'][] = ['label' => 'ListaRubros', 'url' => ['listar-rubros']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="busquedas-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= DetailView::widget([
-        'model' => $data,
-        'attributes' => [
-            'idRubro',
-            'descripcion',
-        ],
-    ]) ?>
     <table class="table">
         <thead>
             <tr>
@@ -32,8 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
             </tr>
         </thead>
         <tbody>
-            <?php $busq = $data->busquedas;
-            foreach ($busq as $objbusq) { ?>
+            <?php
+            foreach ($busquedas as $objbusq) { ?>
                 <tr>
                     <td><?= $objbusq['empresa'] ?></td>
                     <td><?= $objbusq['titulo'] ?></td>
