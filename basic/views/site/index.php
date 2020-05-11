@@ -13,7 +13,7 @@ $this->title = 'Empleos TICS';
         <p class="lead">Tp3 - YII</p>
 
     </div>
-
+    <hr>
     <div class="body-content">
         <div class="row">
 			<div class="col-12">
@@ -38,9 +38,9 @@ $this->title = 'Empleos TICS';
         <br>
         <hr>              
         <div class="row">
-            <div class="col-12" >
-            <h4><em>Mauro Saracini</em></h4>
-            <h4><em>Emanuel Araya</em></h4>    
+            <div class="col-12">
+            <h4>Mauro Saracini</h4>
+            <h4>Emanuel Araya</h4>    
             </div>
         </div>
     </div>
