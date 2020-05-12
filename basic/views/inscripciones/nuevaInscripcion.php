@@ -29,12 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 ?>
                 <?= $form->field($model, 'idBusqueda')->dropdownList(
                         $item,
-                    ['prompt'=>'Elija una busqueda']);
+                    ['prompt'=>'Elija una busqueda'])->label('Busquedas Disponibles');
                 ?>
 
-                <?= $form->field($model, 'fecha')->textInput() ?>
-                <?= $form->field($model, 'apellido')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($model, 'fecha')->textInput()->input('text',['placeholder'=>"YYYY-MM-DD"]) ?>
+                <?= $form->field($model, 'apellido')->textInput(['maxlength' => true])->input('text',['placeholder'=>"APELLIDO"]) ?>
+                <?= $form->field($model, 'nombre')->textInput(['maxlength' => true])->input('text',['placeholder'=>"NOMBRE"]) ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Cargar', ['class' => 'btn btn-success']) ?>
