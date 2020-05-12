@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
 
 /**
  * BusquedasController implements the CRUD actions for Busquedas model.
@@ -148,8 +149,10 @@ class BusquedasController extends Controller
 
     public function actionInscripcionBusqueda($idBusqueda){
         $objBusqueda=$this->findModel($idBusqueda);
+        $busquedas=$objBusqueda->inscripciones;
+        ArrayHelper::multisort($busquedas,'idInscripcion',SORT_DESC);
         return $this->render('inscripcionesBusqueda', [
-            'model' => $objBusqueda->inscripciones,
+            'model' => $busquedas ,
             'empresa'=> $objBusqueda->empresa,
         ]);
     }
